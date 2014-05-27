@@ -1,0 +1,12 @@
+<%- provide :subtitle, "##{@memo.id}" -%>
+<h1>Memo #<%= @memo.id %></h1>
+<dl>
+<%- [:id, :text, :created_at].each do |k| -%>
+  <dt><%= k %></dt><dd><%= @memo[k] %></dd>
+<%- end -%>
+</dl>
+
+<p>
+  <%= link_to "index", memos_path %> |
+  <%= link_to "delete", @memo, method: :delete, data: {confirm: "Are you sure you want to delete 'Memo ##{@memo.id}'?"} %>
+</p>

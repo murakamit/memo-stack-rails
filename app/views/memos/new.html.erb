@@ -1,0 +1,11 @@
+<%- provide :subtitle, "Create new memo" -%>
+<h1>Memos#new</h1>
+
+<%= form_for @memo do |f| %>
+  <div><%= f.label :text %>: <%= f.text_field :text %></div>
+  <div><%= f.submit "create" %></div>
+<% end %>
+
+<p>
+  <%= link_to "index", memos_path %>
+</p>

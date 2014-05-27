@@ -1,0 +1,13 @@
+<%- if flash[:error].present? -%>
+<div class="error">Error: <%= flash[:error] %></div>
+<%- end -%>
+<%- if @errors.present? -%>
+<div class="errors">
+  <div><%= pluralize @errors.count, "error" %></div>
+  <ul>
+  <%- @errors.full_messages.each do |m| -%>
+    <li><%= m %></li>
+  <%- end -%>
+  </ul>
+</div>
+<%- end -%>

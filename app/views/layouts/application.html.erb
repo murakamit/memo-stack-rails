@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<%- subtitle = yield(:subtitle) -%>
+<%- if subtitle.present? -%>
+  <title><%= subtitle %> | MemoStack</title>
+<%- else -%>
+  <title>MemoStack</title>
+<%- end -%>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= render "shared/error" %>
+<%= render "shared/alert" %>
+<%= render "shared/notice" %>
+<%= yield %>
+
+</body>
+</html>
